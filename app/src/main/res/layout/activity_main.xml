@@ -10,7 +10,7 @@
 
     <ListView
         android:id="@+id/listview"
-        android:layout_width="400dp"
+        android:layout_width="350dp"
         android:layout_height="wrap_content" />
 
     <LinearLayout
@@ -21,31 +21,56 @@
         android:layout_toRightOf="@id/listview"
         android:orientation="vertical">
 
-        <Button
-            android:id="@+id/btnScan"
+        <RelativeLayout
+            android:id="@+id/containerCoords"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Scan" />
-
-        <EditText
-            android:id="@+id/txtCantidad"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:hint="Cantidad"
-            android:inputType="number"
-            android:selectAllOnFocus="true"
-            android:text="10" />
+            android:layout_toRightOf="@id/containerButtons">
+
+            <EditText
+                android:id="@+id/txtX"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:hint="X"
+                android:inputType="numberDecimal"
+                android:selectAllOnFocus="true" />
+
+            <EditText
+                android:id="@+id/txtY"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/txtX"
+                android:hint="Y"
+                android:inputType="numberDecimal"
+                android:selectAllOnFocus="true" />
+
+            <Button
+                android:id="@+id/btnClear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/txtX"
+                android:layout_alignRight="@id/txtY"
+                android:layout_below="@id/txtX"
+                android:layout_marginTop="20dp"
+                android:text="Borrar coordenadas" />
+        </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dirección"/>
+
             <RadioGroup
                 android:id="@+id/radioGroup"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
 
                 <RadioButton
                     android:id="@+id/radioN"
@@ -74,56 +99,32 @@
             </RadioGroup>
         </RelativeLayout>
 
-        <Button
-            android:id="@+id/btnSave"
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Guardar" />
+            android:text="Medidas"
+            android:layout_marginTop="30dp"/>
 
-        <Button
-            android:id="@+id/btnNuevo"
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/txtCantidad"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Nuevo archivo" />
+            android:hint="Cantidad"
+            android:inputType="number"
+            android:selectAllOnFocus="true"
+            android:text="10" />
+
+
     </LinearLayout>
 
-    <RelativeLayout
-        android:id="@+id/containerCoords"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_toRightOf="@id/containerButtons">
-
-        <EditText
-            android:id="@+id/txtX"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:hint="X"
-            android:inputType="numberDecimal"
-            android:selectAllOnFocus="true" />
-
-        <EditText
-            android:id="@+id/txtY"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/txtX"
-            android:hint="Y"
-            android:inputType="numberDecimal"
-            android:selectAllOnFocus="true" />
-
-        <Button
-            android:id="@+id/btnClear"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@id/txtX"
-            android:layout_alignRight="@id/txtY"
-            android:layout_below="@id/txtX"
-            android:layout_marginTop="20dp"
-            android:text="Limpiar" />
-    </RelativeLayout>
-
+    <Button
+        android:id="@+id/btnScan"
+        android:layout_centerVertical="true"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@id/containerButtons"
+        android:text="Scan" />
     <!--<ImageView-->
         <!--android:id="@+id/imageViewCompass"-->
         <!--android:layout_width="wrap_content"-->
